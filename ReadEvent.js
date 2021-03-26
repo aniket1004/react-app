@@ -16,7 +16,7 @@ class ReadEvent extends React.Component
     }
     async loadData()
     {
-        await fetch('http://localhost/php-api/view/readall.view.php')
+        await fetch('http://localhost/php-api/controller/php_api/event/read_event.controller.php')
         .then(response => response.json())
         .then(data => { 
             this.setState({ events : data,loading : false});
@@ -24,16 +24,16 @@ class ReadEvent extends React.Component
         );
     }
     async componentDidMount(){
-        await fetch('http://localhost/php-api/view/readall.view.php')
+        await fetch('http://localhost/php-api/controller/php_api/event/read_event.controller.php')
         .then(response => response.json())
         .then(data => { 
             this.setState({ events : data,loading : false});
         }    
         );
     }
-    async deleteUser(uid,mail,e)
+    async deleteEvent(id,e)
     {
-        const url = `http://localhost/php-api/controller/php_api/user/delete_user.controller.php?id=${uid}&email=${mail}`;
+        const url = `http://localhost/php-api/controller/php_api/event/delete_event.controller.php?id=${id}`;
         await fetch(url)
         .then(response => response.json())
         .then(data => this.setState({message : data.Message}));
@@ -71,10 +71,10 @@ class ReadEvent extends React.Component
                             
                             return(
                             <tr>
-                                <td className="text-info">{event.event}</td>
-                                <td className="text-info">{event.desc}</td>
+                                <td className="text-info">{event.title}</td>
+                                <td className="text-info">{event.description}</td>
                                 <td className="text-info">{event.date}</td>
-                                <td><i class="fas fa-trash fa-2x text-danger"></i></td>
+                                <td><i class="fas fa-trash fa-2x text-danger" onClick={(e)=> this.deleteEvent(event.id,e)}></i></td>
                             </tr>
                             )
                         })}
