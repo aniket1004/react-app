@@ -30,6 +30,9 @@ class CreateUser extends React.Component
         axios.post('http://localhost/php-api/controller/php_api/user/create_user.controller.php',userData)
         .then(response => {
             this.setState({message : 'User created..',name : '', email : ''});
+            setTimeout(()=>{
+                this.setState({message : ''});
+            },3000)
         })
         .catch(error => {
             this.setState({message : 'Unable to create user'});

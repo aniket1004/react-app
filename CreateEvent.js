@@ -1,3 +1,4 @@
+import axios from 'axios';
 import React from 'react';
 
 class CreateEvent extends React.Component
@@ -7,7 +8,8 @@ class CreateEvent extends React.Component
         super(props);
         this.state = {
             event : '',
-            desc : ''
+            desc : '',
+            message : ''
         }
         this.handleDesc = this.handleDesc.bind(this);
         this.handleEvent = this.handleEvent.bind(this);
@@ -23,8 +25,21 @@ class CreateEvent extends React.Component
     }
     handleSubmit(event)
     {
-        alert(`${this.state.event} and ${this.state.desc}`);
         event.preventDefault();
+        const eventData = {
+            title : this.state.event,
+            description : this.state.desc
+        };
+        axios.post('http://localhost/php-api/controller/php_api/event/create_event.controller.php',eventData)
+        .then(response => {
+            this.setState({message : 'event created..',event : '', desc : ''});
+            setTimeout(()=>{
+                this.setState({message : ''});
+            },3000);
+        })
+        .catch(error => {
+            this.setState({message : 'Unable to create user'});
+        })        
     }
     render()
     {
@@ -53,13 +68,14 @@ class CreateEvent extends React.Component
                             col="5" 
                             className="form-control" 
                             onChange={this.handleDesc} 
+                            value={desc}
                         >
-                            {desc}
+                            
                         </textarea>
                     </div>
                     <button type="submit" className="btn btn-danger btn-block mb-4">Insert</button>
                 </form>
-                <p className="text-danger"></p>
+                <p className="text-danger">{this.state.message}</p>
             </div>
         )
     }
