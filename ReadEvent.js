@@ -2,13 +2,13 @@ import React from 'react';
 //import CreateNav from './CreateNav';
 import Loader from './Loader';
 
-class UserDetails extends React.Component
+class ReadEvent extends React.Component
 {
     constructor(props)
     {
         super(props);
         this.state = {
-            users : [],
+            events : [],
             message : '',
             loading : true
         };
@@ -19,7 +19,7 @@ class UserDetails extends React.Component
         await fetch('http://localhost/php-api/view/readall.view.php')
         .then(response => response.json())
         .then(data => { 
-            this.setState({ users : data,loading : false});
+            this.setState({ events : data,loading : false});
         }    
         );
     }
@@ -27,7 +27,7 @@ class UserDetails extends React.Component
         await fetch('http://localhost/php-api/view/readall.view.php')
         .then(response => response.json())
         .then(data => { 
-            this.setState({ users : data,loading : false});
+            this.setState({ events : data,loading : false});
         }    
         );
     }
@@ -49,7 +49,7 @@ class UserDetails extends React.Component
         }
         else
         {
-        if (this.state.users !== null)
+        if (this.state.events !== null)
         {
         return(
             
@@ -59,22 +59,22 @@ class UserDetails extends React.Component
                 <table className="table align-middle mt-4 table-bordered">
                     <thead>
                         <tr className="table-info">
-                            <th>Id</th>
-                            <th>Name</th>
-                            <th>Email</th>
+                            <th>Event</th>
+                            <th>Description</th>
+                            <th>Insert At</th>
                             <th></th>
                         </tr>
                     </thead>
                     <tbody>
                         {   
-                            this.state.users.map(user => {
+                            this.state.events.map(event => {
                             
                             return(
                             <tr>
-                                <td className="text-info">{user.id}</td>
-                                <td className="text-info">{user.name}</td>
-                                <td className="text-info">{user.email}</td>
-                                <td><i class="fas fa-trash fa-2x text-danger" onClick={(e)=> this.deleteUser(user.id,user.email,e)}></i></td>
+                                <td className="text-info">{event.event}</td>
+                                <td className="text-info">{event.desc}</td>
+                                <td className="text-info">{event.date}</td>
+                                <td><i class="fas fa-trash fa-2x text-danger"></i></td>
                             </tr>
                             )
                         })}
@@ -95,4 +95,4 @@ class UserDetails extends React.Component
     }
 }
 
-export default UserDetails;
+export default ReadEvent;
