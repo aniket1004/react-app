@@ -1,4 +1,5 @@
 import React from 'react';
+import CreateNav from './CreateNav';
 import Loader from './Loader';
 
 class UserDetails extends React.Component
@@ -53,6 +54,7 @@ class UserDetails extends React.Component
         return(
             
             <div className="container ms-2 mt-4 ">
+                
                 <h1 className="text-danger">View User Details</h1>
                 <table className="table align-middle mt-4 table-bordered">
                     <thead>
