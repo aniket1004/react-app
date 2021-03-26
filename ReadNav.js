@@ -1,6 +1,6 @@
 import { BrowserRouter as Router , Route, Link, Switch} from 'react-router-dom';
 import UserDetails from './UserDetails';
-
+import ReadEvent from './ReadEvent';
 const CreateNav = (props) => {
     return (
 <div className="container mt-4">
@@ -20,7 +20,7 @@ const CreateNav = (props) => {
     </ul>
     <Switch>
         <Route exact component={UserDetails} path="/readUser"></Route>
-        {/* <Route exact component={CreateE} path="/readEvent"></Route> */}
+        <Route exact component={ReadEvent} path="/readEvent"></Route>
     </Switch>
     </Router>
 </div>
