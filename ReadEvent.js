@@ -33,6 +33,7 @@ class ReadEvent extends React.Component
     }
     async deleteEvent(id,e)
     {
+        this.setState({message : 'Loading...'});
         const url = `http://localhost/php-api/controller/php_api/event/delete_event.controller.php?id=${id}`;
         await fetch(url)
         .then(response => response.json())
