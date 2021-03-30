@@ -41,6 +41,7 @@ class ReadBlog extends React.Component
         .then(data => this.setState({message : data.Message}));
         this.loadData();
     }
+    
     render()
     {
         if (this.state.loading)
