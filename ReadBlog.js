@@ -34,6 +34,7 @@ class ReadBlog extends React.Component
     }
     async deleteBlog(id,e)
     {
+        this.setState({message : 'Loading...'});
         const url = `http://localhost/php-api/controller/php_api/blog/delete_blog.controller.php?id=${id}`;
         await fetch(url)
         .then(response => response.json())
