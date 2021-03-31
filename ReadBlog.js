@@ -32,6 +32,7 @@ class ReadBlog extends React.Component
         }    
         );
     }
+    
     async deleteBlog(id,e)
     {
         this.setState({message : 'Loading...'});
