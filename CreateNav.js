@@ -3,6 +3,7 @@ import { BrowserRouter as Router , Route, Link, Switch} from 'react-router-dom';
 import CreateUser from './CreateUser';
 import CreateEvent from './CreateEvent';
 import CreateBlog from './CreateBlog';
+import CreateCategory from './CreateCategory';
 
 const CreateNav = (props) => {
     return (
@@ -35,6 +36,7 @@ const CreateNav = (props) => {
         <Route exact component={CreateUser} path="/createUser"></Route>
         <Route exact component={CreateEvent} path="/createEvent"></Route>
         <Route exact component={CreateBlog} path="/createBlog" />
+        <Route exact component={CreateCategory} path="/createCategory" />
     </Switch>
     </Router>
 </div>
