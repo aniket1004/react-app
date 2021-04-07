@@ -20,6 +20,11 @@ const CreateNav = (props) => {
         <Link to="/readBlog" className="nav-link bg-info text-dark">Blog</Link>
     </li>
     </div>
+    <div>
+    <li className="nav-item" role="presentation">
+        <Link to="/readCategory" className="nav-link bg-info text-dark">Category</Link>
+    </li>
+    </div>
     {/* <li class="nav-item" role="presentation">
         
     </li> */}
