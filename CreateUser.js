@@ -22,6 +22,7 @@ class CreateUser extends React.Component
     }
     handleSubmit(event)
     {
+        this.setState({message : 'Loading...'});
         event.preventDefault();
         const userData = {
             name : this.state.name,

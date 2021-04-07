@@ -25,6 +25,7 @@ class CreateEvent extends React.Component
     }
     handleSubmit(event)
     {
+        this.setState({message : 'Loading...'});
         event.preventDefault();
         const eventData = {
             title : this.state.event,

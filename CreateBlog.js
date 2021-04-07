@@ -25,6 +25,7 @@ class CreateBlog extends React.Component
     }
     handleSubmit(event)
     {
+        this.setState({message : 'Loading...'});
         event.preventDefault();
         const blogData = {
             title : this.state.title,
