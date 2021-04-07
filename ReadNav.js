@@ -2,6 +2,8 @@ import { BrowserRouter as Router , Route, Link, Switch} from 'react-router-dom';
 import UserDetails from './UserDetails';
 import ReadEvent from './ReadEvent';
 import ReadBlog from './ReadBlog';
+import ReadCategory from './ReadCategory';
+
 const CreateNav = (props) => {
     return (
 <div className="container mt-4">
@@ -33,6 +35,7 @@ const CreateNav = (props) => {
         <Route exact component={UserDetails} path="/readUser"></Route>
         <Route exact component={ReadEvent} path="/readEvent"></Route>
         <Route exact component={ReadBlog} path="/readBlog"></Route>
+        <Route exact component={ReadCategory} path="/readCategory"></Route>
     </Switch>
     </Router>
 </div>
