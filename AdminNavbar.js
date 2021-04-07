@@ -21,7 +21,6 @@ function AdminNavbar()
               <li className="nav-item">
                 <Link to="/read" className="nav-link text-danger"><i class="fas fa-user"></i> Read</Link>
               </li>
-              
             </ul>
           </div>
         </nav>
