@@ -22,6 +22,11 @@ const CreateNav = (props) => {
         <Link to="/createBlog" className="nav-link bg-info text-dark">Blog</Link>
     </li>
     </div>
+    <div>
+    <li className="nav-item" role="presentation">
+        <Link to="/createCategory" className="nav-link bg-info text-dark">Category</Link>
+    </li>
+    </div>
     {/* <li class="nav-item" role="presentation">
         
     </li> */}
