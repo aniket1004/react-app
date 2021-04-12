@@ -78,7 +78,7 @@ class CreateService extends React.Component
                             value={description} />
                     </div>
                     <div className="form-outline mb-4">
-                        <label className="form-label text-danger" for="img">Service Image</label>
+                        <label className="form-label text-danger" for="img">Service Image(Insert Link)</label>
                         <input 
                             type="text" 
                             id="img" 
