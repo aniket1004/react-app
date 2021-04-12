@@ -33,7 +33,11 @@ const CreateNav = (props) => {
             <Link to="/readServices" className="nav-link bg-info text-dark">Services</Link>
         </li>
     </div>
-    
+    <div>
+        <li className="nav-item" role="presentation">
+            <Link to="/readClients" className="nav-link bg-info text-dark">Clients</Link>
+        </li>
+    </div>
     {/* <li class="nav-item" role="presentation">
         
     </li> */}
