@@ -51,7 +51,7 @@ class CreateService extends React.Component
     }
     render()
     {
-        // const { title , description , img } = this.state;
+        const { title , description , img } = this.state;
         return (
             <div className="container">
                 <h1 className="mt-5 text-danger text-center">Add Services</h1>
@@ -65,7 +65,7 @@ class CreateService extends React.Component
                             name="title" 
                             className="form-control" 
                             onChange={this.handleTitle} 
-                            value={this.state.title} />
+                            value={title} />
                     </div>
                     <div className="form-outline mb-4">
                         <label className="form-label text-danger" for="description">Service Description</label>
@@ -75,7 +75,7 @@ class CreateService extends React.Component
                             name="description" 
                             className="form-control" 
                             onChange={this.handleDescription} 
-                            value={this.state.description} />
+                            value={description} />
                     </div>
                     <div className="form-outline mb-4">
                         <label className="form-label text-danger" for="img">Service Image</label>
@@ -85,7 +85,7 @@ class CreateService extends React.Component
                             name="img" 
                             className="form-control" 
                             onChange={this.handleImage} 
-                            value={this.state.img} />
+                            value={img} />
                     </div>
                     <button type="submit" className="btn btn-danger btn-block mb-4">Insert</button>
                 </form>
