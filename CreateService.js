@@ -23,7 +23,7 @@ class CreateService extends React.Component
     }
     handleDescription(event)
     {
-        this.setState({desciption : event.target.value})
+        this.setState({description : event.target.value})
     }
     handleImage(event)
     {
@@ -51,7 +51,7 @@ class CreateService extends React.Component
     }
     render()
     {
-        const { title , description , img } = this.state;
+        // const { title , description , img } = this.state;
         return (
             <div className="container">
                 <h1 className="mt-5 text-danger text-center">Add Services</h1>
@@ -65,7 +65,7 @@ class CreateService extends React.Component
                             name="title" 
                             className="form-control" 
                             onChange={this.handleTitle} 
-                            value={title} />
+                            value={this.state.title} />
                     </div>
                     <div className="form-outline mb-4">
                         <label className="form-label text-danger" for="description">Service Description</label>
@@ -74,8 +74,8 @@ class CreateService extends React.Component
                             id="description" 
                             name="description" 
                             className="form-control" 
-                            onChange={this.handledescription} 
-                            value={description} />
+                            onChange={this.handleDescription} 
+                            value={this.state.description} />
                     </div>
                     <div className="form-outline mb-4">
                         <label className="form-label text-danger" for="img">Service Image</label>
@@ -85,7 +85,7 @@ class CreateService extends React.Component
                             name="img" 
                             className="form-control" 
                             onChange={this.handleImage} 
-                            value={img} />
+                            value={this.state.img} />
                     </div>
                     <button type="submit" className="btn btn-danger btn-block mb-4">Insert</button>
                 </form>
