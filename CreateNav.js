@@ -5,6 +5,7 @@ import CreateEvent from './CreateEvent';
 import CreateBlog from './CreateBlog';
 import CreateCategory from './CreateCategory';
 import CreateService from './CreateService';
+import CreateClient from './CreateClient';
 const CreateNav = (props) => {
     return (
 <div className="container mt-4">
@@ -33,6 +34,11 @@ const CreateNav = (props) => {
             <Link to="/createService" className="nav-link bg-info text-dark">Service</Link>
         </li>
     </div>
+    <div>
+        <li className="nav-item" role="presentation">
+            <Link to="/createClient" className="nav-link bg-info text-dark">Client</Link>
+        </li>
+    </div>
     {/* <li class="nav-item" role="presentation">
         
     </li> */}
@@ -43,6 +49,7 @@ const CreateNav = (props) => {
         <Route exact component={CreateBlog} path="/createBlog" />
         <Route exact component={CreateCategory} path="/createCategory" />
         <Route exact component={CreateService} path="/createService" />
+        <Route exact component={CreateClient} path="/createClient" />
     </Switch>
     </Router>
 </div>
