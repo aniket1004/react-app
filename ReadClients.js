@@ -34,7 +34,7 @@ class ReadClients extends React.Component
     async deleteEvent(id,e)
     {
         this.setState({message : 'Loading...'});
-        const url = `http://localhost/php-api/controller/php_api/category/delete_category.controller.php?category=${id}`;
+        const url = `http://localhost/php-api/controller/php_api/client/delete_client.controller.php?id=${id}`;
         await fetch(url)
         .then(response => response.json())
         .then(data => this.setState({message : data.Message}));
@@ -74,7 +74,7 @@ class ReadClients extends React.Component
                             <tr>
                                 <td className="text-info">{event.name}</td>
                                 <td className="text-info">{event.img}</td>
-                                <td><i class="fas fa-trash fa-2x text-danger" onClick={(e)=> this.deleteEvent(event.cat,e)}></i></td>
+                                <td><i class="fas fa-trash fa-2x text-danger" onClick={(e)=> this.deleteEvent(event.id,e)}></i></td>
                             </tr>
                             )
                         })}
