@@ -10,6 +10,7 @@ class CreateService extends React.Component
             title : '',
             desciption : '',
             img : '',
+            message : '',
         };
         this.handleSubmit = this.handleSubmit.bind(this);
         this.handleTitle = this.handleTitle.bind(this);
@@ -37,7 +38,7 @@ class CreateService extends React.Component
             description : this.state.description,
             img : this.state.img
         };
-        axios.post(`http://localhost/php-api/controller/php_api/category/add_category.controller.php`,blogData)
+        axios.post(`http://localhost/php-api/controller/php_api/services/create_service.controller.php`,blogData)
         .then(response => {
             this.setState({message : 'New service added',category : ''});
             setTimeout(()=>{
