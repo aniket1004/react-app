@@ -73,6 +73,7 @@ class ReadClients extends React.Component
                             return(
                             <tr>
                                 <td className="text-info">{event.name}</td>
+                                <td className="text-info">{event.img}</td>
                                 <td><i class="fas fa-trash fa-2x text-danger" onClick={(e)=> this.deleteEvent(event.cat,e)}></i></td>
                             </tr>
                             )
