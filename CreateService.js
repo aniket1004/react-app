@@ -8,7 +8,7 @@ class CreateService extends React.Component
         super(props);
         this.state = {
             title : '',
-            desciption : '',
+            description : '',
             img : '',
             message : '',
         };
@@ -34,13 +34,13 @@ class CreateService extends React.Component
         this.setState({message : 'Loading...'});
         event.preventDefault();
         const blogData = {
-            tiile : this.state.title,
+            title : this.state.title,
             description : this.state.description,
             img : this.state.img
         };
         axios.post(`http://localhost/php-api/controller/php_api/services/create_service.controller.php`,blogData)
         .then(response => {
-            this.setState({message : 'New service added',category : ''});
+            this.setState({message : 'New service added',title : '',description : '',img : ''});
             setTimeout(()=>{
                 this.setState({message : ''});
             },3000);
@@ -58,7 +58,7 @@ class CreateService extends React.Component
                 
                 <form onSubmit={this.handleSubmit} className="mt-4">
                     <div className="form-outline mb-4">
-                        <label className="form-label text-danger" for="name">Service title</label>
+                        <label className="form-label text-danger" for="title">Service title</label>
                         <input 
                             type="text" 
                             id="title" 
@@ -68,7 +68,7 @@ class CreateService extends React.Component
                             value={title} />
                     </div>
                     <div className="form-outline mb-4">
-                        <label className="form-label text-danger" for="name">Service Description</label>
+                        <label className="form-label text-danger" for="description">Service Description</label>
                         <input 
                             type="text" 
                             id="description" 
@@ -78,7 +78,7 @@ class CreateService extends React.Component
                             value={description} />
                     </div>
                     <div className="form-outline mb-4">
-                        <label className="form-label text-danger" for="name">Service Image</label>
+                        <label className="form-label text-danger" for="img">Service Image</label>
                         <input 
                             type="text" 
                             id="img" 
