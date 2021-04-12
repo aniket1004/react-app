@@ -4,7 +4,7 @@ import ReadEvent from './ReadEvent';
 import ReadBlog from './ReadBlog';
 import ReadCategory from './ReadCategory';
 import ReadServices from './ReadService';
-
+import ReadClients from './ReadClients';
 const CreateNav = (props) => {
     return (
 <div className="container mt-4">
@@ -48,6 +48,7 @@ const CreateNav = (props) => {
         <Route exact component={ReadBlog} path="/readBlog"></Route>
         <Route exact component={ReadCategory} path="/readCategory"></Route>
         <Route exact component={ReadServices} path="/readServices"></Route>
+        <Route exact component={ReadClients} path="/readClients"></Route>
     </Switch>
     </Router>
 </div>
